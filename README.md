@@ -1,4 +1,4 @@
-# Terraform Provider for Scaleway
+# terraform Provider for Scaleway
 
 - [Provider Documentation Website](https://www.terraform.io/docs/providers/scaleway/index.html)
 - [![Gitter chat](https://badges.gitter.im/hashicorp-terraform/Lobby.png)](https://gitter.im/hashicorp-terraform/Lobby)
