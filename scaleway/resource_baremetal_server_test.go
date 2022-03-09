@@ -42,7 +42,7 @@ func testSweepBaremetalServer(_ string) error {
 }
 
 func TestAccScalewayBaremetalServer_Basic(t *testing.T) {
-	t.Skip("Skipping Baremetal Server test as no stock is available currently")
+	//t.Skip("Skipping Baremetal Server test as no stock is available currently")
 	tt := NewTestTools(t)
 	defer tt.Cleanup()
 
@@ -66,8 +66,8 @@ func TestAccScalewayBaremetalServer_Basic(t *testing.T) {
 						name        = "%s"
 						zone        = "fr-par-2"
 						description = "test a description"
-						offer       = "GP-BM1-M"
-						os          = "d17d6872-0412-45d9-a198-af82c34d3c5c"
+						offer       = "EM-L101X-SATA"
+						os          = "e04414b9-16d4-4ffb-8ba1-6b80704c7d2a"
 					
 						tags = [ "terraform-test", "scaleway_baremetal_server", "minimal" ]
 						ssh_key_ids = [ scaleway_account_ssh_key.main.id ]
@@ -76,8 +76,8 @@ func TestAccScalewayBaremetalServer_Basic(t *testing.T) {
 				Check: resource.ComposeTestCheckFunc(
 					testAccCheckScalewayBaremetalServerExists(tt, "scaleway_baremetal_server.base"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "name", name),
-					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "offer_id", "fr-par-2/964f9b38-577e-470f-a220-7d762f9e8672"),
-					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "os_id", "fr-par-2/d17d6872-0412-45d9-a198-af82c34d3c5c"),
+					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "offer_id", "fr-par-2/bd757ca3-a71b-4158-9ef5-39436b6db2a"),
+					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "os_id", "fr-par-2/e04414b9-16d4-4ffb-8ba1-6b80704c7d2a"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "description", "test a description"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "tags.0", "terraform-test"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "tags.1", "scaleway_baremetal_server"),
@@ -97,8 +97,8 @@ func TestAccScalewayBaremetalServer_Basic(t *testing.T) {
 						name        = "%s"
 						zone        = "fr-par-2"
 						description = "test a description"
-						offer       = "GP-BM1-M"
-						os          = "d859aa89-8b4a-4551-af42-ff7c0c27260a"
+						offer       = "EM-L101X-SATA"
+						os          = "e04414b9-16d4-4ffb-8ba1-6b80704c7d2a"
 					
 						tags = [ "terraform-test", "scaleway_baremetal_server", "minimal", "edited" ]
 						ssh_key_ids = [ scaleway_account_ssh_key.main.id ]
@@ -107,8 +107,8 @@ func TestAccScalewayBaremetalServer_Basic(t *testing.T) {
 				Check: resource.ComposeTestCheckFunc(
 					testAccCheckScalewayBaremetalServerExists(tt, "scaleway_baremetal_server.base"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "name", name),
-					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "offer_id", "fr-par-2/964f9b38-577e-470f-a220-7d762f9e8672"),
-					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "os_id", "fr-par-2/d859aa89-8b4a-4551-af42-ff7c0c27260a"),
+					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "offer_id", "fr-par-2/bd757ca3-a71b-4158-9ef5-39436b6db2a4"),
+					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "os_id", "fr-par-2/e04414b9-16d4-4ffb-8ba1-6b80704c7d2a"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "description", "test a description"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "tags.#", "4"),
 					resource.TestCheckResourceAttr("scaleway_baremetal_server.base", "tags.0", "terraform-test"),

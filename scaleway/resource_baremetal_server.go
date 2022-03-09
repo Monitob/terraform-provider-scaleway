@@ -41,6 +41,7 @@ func resourceScalewayBaremetalServer() *schema.Resource {
 				Required:    true,
 				ForceNew:    true,
 				Description: "ID or name of the server offer",
+				ValidateFunc: validationUUID(),
 			},
 			"offer_id": {
 				Type:        schema.TypeString,
