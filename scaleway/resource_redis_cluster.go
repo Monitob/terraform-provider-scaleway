@@ -276,6 +276,10 @@ func resourceScalewayRedisClusterRead(ctx context.Context, d *schema.ResourceDat
 		return diag.FromErr(err)
 	}
 
+	if cluster.Status == redis.ClusterStatusError {
+		return diag.FromErr(fmt.Errorf("cluster on error state. Please contact support"))
+	}
+
 	_ = d.Set("name", cluster.Name)
 	_ = d.Set("node_type", cluster.NodeType)
 	_ = d.Set("user_name", d.Get("user_name").(string))
